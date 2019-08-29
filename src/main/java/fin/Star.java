@@ -19,7 +19,7 @@ public class Star extends PApplet {
 
     public void settings() {
         // 
-        size(1920, 1080);
+        size(1920, 1080);					//size(width, height)，設定視窗的長寬像素點的個數
         for (int i = 0; i < num; i++) {
             x[i] = random(width);
             y[i] = random(height);
@@ -32,15 +32,7 @@ public class Star extends PApplet {
     }
 
     public void draw() {
-        if (!back) {
-            colorMode(HSB, 360, 255, 255);
-            background(0);
-            noStroke();
-            fill(0);
-            ellipseMode(RADIUS);
-            blendMode(ADD);
-            back = true;
-        }
+    	background_setting();
 
         
 
@@ -51,6 +43,8 @@ public class Star extends PApplet {
                 ax[i] = magnetism * (mouseX - x[i]) / (distance * distance);
                 ay[i] = magnetism * (mouseY - y[i]) / (distance * distance);
             }
+            //ax[i] = 0;
+            //ay[i] = 0;
             vx[i] += ax[i]; //增加速度vx
             vy[i] += ay[i]; 
             vx[i] = vx[i] * gspeed;
@@ -66,5 +60,15 @@ public class Star extends PApplet {
             ellipse((float) x[i], (float) y[i], (float) radius, (float) radius);
         }
     }
-    
+    void background_setting() {
+    	if (!back) {
+            colorMode(HSB, 360, 255, 255);	//色相、飽和度、亮度的值
+            background(0);					//background(color) 設定背景顏色，，0(黑色)至255(白色)
+            noStroke();						//不畫出筆
+            fill(0);						//填顏色，fill(red,green,blue,alpha);	alpha為透明度，0-255
+            ellipseMode(RADIUS);			//ellipse(x,y,width,height)(3,3,5,5);		ellipse:畫圓或橢圓；		RADIUS適用上面長寬的一半，畫圓
+            blendMode(ADD);					//BLEND（混合）- 对颜色进行线性插值，ADD（相加）- 对两个颜色进行相加的混合之后与白色取小
+            back = true;
+        }
+    }
 }
