@@ -3,7 +3,7 @@
   associations="true" dependencies="true" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="fin.Ball" project="fin" file="/fin/src/main/java/fin/Ball.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="421" y="441"/>    
+    <position height="-1" width="-1" x="419" y="399"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="fin.Star" project="fin" file="/fin/src/main/java/fin/Star.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="882" y="329"/>    
+    <position height="-1" width="-1" x="886" y="304"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -30,8 +30,12 @@
   </class>  
   <association id="4">    
     <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="5" name="ball"/>      
-      <multiplicity id="6" minimum="0" maximum="2147483647"/>    
+      <attribute id="5" name="ball">        
+        <position height="0" width="0" x="-2" y="-42"/>      
+      </attribute>      
+      <multiplicity id="6" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="-2" y="-42"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  

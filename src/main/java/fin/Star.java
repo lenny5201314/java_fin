@@ -22,7 +22,8 @@ public class Star extends PApplet {
     }
 
     public void draw() {
-    	background_setting();
+    	Background background = new Background();
+    	background.background_setting(this);
 
         for (int i = 0; i < num; i++) {
             float distance = dist( mouseX, mouseY, ball[i].get_x(), ball[i].get_y()); //找到兩點之間距離
@@ -44,15 +45,16 @@ public class Star extends PApplet {
             ellipse(ball[i].get_x(), ball[i].get_y(), radius, radius);
         }
     }
-    void background_setting() {
+    
+	public void background_setting() {
     	if (!back) {
-            colorMode(HSB, 360, 255, 255);	//色相、飽和度、亮度的值
-            background(0);					//background(color) 設定背景顏色，，0(黑色)至255(白色)
-            noStroke();						//不畫出筆
-            fill(0);						//填顏色，fill(red,green,blue,alpha);	alpha為透明度，0-255
-            ellipseMode(RADIUS);			//ellipse(x,y,width,height)(3,3,5,5);		ellipse:畫圓或橢圓；		RADIUS適用上面長寬的一半，畫圓
-            blendMode(ADD);					//BLEND（混合）- 对颜色进行线性插值，ADD（相加）- 对两个颜色进行相加的混合之后与白色取小
-            back = true;
+            this.colorMode(HSB, 360, 255, 255);	//色相、飽和度、亮度的值
+            this.background(0);					//background(color) 設定背景顏色，，0(黑色)至255(白色)
+            this.noStroke();						//不畫出筆
+            this.fill(0);						//填顏色，fill(red,green,blue,alpha);	alpha為透明度，0-255
+            this.ellipseMode(RADIUS);			//ellipse(x,y,width,height)(3,3,5,5);		ellipse:畫圓或橢圓；		RADIUS適用上面長寬的一半，畫圓
+            this.blendMode(ADD);					//BLEND（混合）- 对颜色进行线性插值，ADD（相加）- 对两个颜色进行相加的混合之后与白色取小
+            this.back = true;
         }
     }
 }
