@@ -34,8 +34,6 @@ public class Star extends PApplet {
     public void draw() {
     	background_setting();
 
-        
-
         for (int i = 0; i < num; i++) {
             double distance = dist((float) mouseX, (float) mouseY, (float) x[i], (float) y[i]); //找到兩點之間距離
             //加速度與距離吸引中心的距離的平方成反比。
